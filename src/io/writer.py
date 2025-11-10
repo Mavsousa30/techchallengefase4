@@ -70,15 +70,32 @@ class VideoWriter:
         self.codec = codec
         
         # Criar diretório se não existir
-        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+        dir_path = os.path.dirname(os.path.abspath(path))
+        if dir_path:  # Só cria se não for diretório vazio
+            os.makedirs(dir_path, exist_ok=True)
+            
+        # Verificar se diretório existe e tem permissões
+        if dir_path and not os.path.exists(dir_path):
+            raise VideoWriterError(
+                f"Failed to create output directory: {dir_path}"
+            )
         
         # Inicializar VideoWriter
         self._writer = self._create_writer()
         
         if not self._writer.isOpened():
+            import sys
             raise VideoWriterError(
-                f"Failed to create VideoWriter for {path}. "
-                f"Check codec '{codec}' and path permissions."
+                f"Failed to create VideoWriter for {path}.\n"
+                f"  Codec: {codec}\n"
+                f"  Directory: {dir_path if dir_path else '(current)'}\n"
+                f"  Directory exists: {os.path.exists(dir_path) if dir_path else 'N/A'}\n"
+                f"  Current working dir: {os.getcwd()}\n"
+                f"  Possible solutions:\n"
+                f"    1. Try setting save_preview=False in InferencePipeline\n"
+                f"    2. Check if 'outputs/' directory exists\n"
+                f"    3. Try a different codec (XVID, MJPG)\n"
+                f"  See: notebooks/FIX_VIDEOWRITER_ERROR.md"
             )
     
     def _create_writer(self) -> cv2.VideoWriter:
@@ -123,10 +140,11 @@ class VideoWriter:
             frame = cv2.resize(frame, self.frame_size)
         
         # Escrever frame
-        success = self._writer.write(frame)
+        # Nota: cv2.VideoWriter.write() não retorna valor útil, então verificamos se está aberto
+        if not self._writer.isOpened():
+            raise VideoWriterError(f"VideoWriter is not opened for {self.path}")
         
-        if not success:
-            raise VideoWriterError(f"Failed to write frame to {self.path}")
+        self._writer.write(frame)
     
     def release(self) -> None:
         """

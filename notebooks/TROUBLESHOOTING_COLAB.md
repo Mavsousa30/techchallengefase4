@@ -1,5 +1,23 @@
 # 🔧 Troubleshooting - Colab
 
+## 🚨 Erros Mais Comuns
+
+### ⚠️ **NOVO**: VideoWriterError: Failed to write frame
+**→ [Solução Completa aqui](FIX_VIDEOWRITER_ERROR.md)**
+
+**Solução Rápida:**
+```python
+# Use save_preview=False (não salva vídeo, mas gera todos os relatórios)
+pipeline = InferencePipeline(
+    video_path=video_file,
+    save_preview=False,  # ← Solução!
+    face_backend='opencv',
+    emotion_backend='deepface'
+)
+```
+
+---
+
 ## ❌ Erro: "No module named 'src'"
 
 ### **Causa:**
