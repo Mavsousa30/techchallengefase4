@@ -1,0 +1,26 @@
+# Core dependencies
+opencv-python
+numpy
+pandas
+
+# Deep Learning and Computer Vision
+deepface
+# face-recognition  # TODO: Requires cmake/dlib - install manually if needed
+torch
+torchvision
+# mediapipe  # TODO: Add mediapipe when compatible version is available
+
+# Utilities
+tqdm
+pydantic
+rich
+moviepy
+
+# Web Interface
+streamlit
+plotly
+
+# Development and Testing
+pytest
+mypy
+ruff
