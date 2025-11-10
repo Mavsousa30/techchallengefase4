@@ -74,14 +74,18 @@ pip install -r requirements.txt
 
 **10-20x mais rápido** que rodar localmente, com GPU gratuita:
 
-```bash
-# 1. Acesse o notebook
-https://colab.research.google.com/github/Mavsousa30/techchallengefase4/blob/main/notebooks/Colab_Video_Analysis.ipynb
+#### **Opção 1: Notebook Simplificado** ⭐ **Mais Fácil**
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mavsousa30/techchallengefase4/blob/main/notebooks/Colab_Simple.ipynb)
 
+```bash
+# 1. Clique no badge acima
 # 2. Ative a GPU: Runtime → Change runtime type → GPU (T4)
-# 3. Execute todas as células: Runtime → Run all
-# 4. Faça upload do seu vídeo quando solicitado
+# 3. Execute: Runtime → Run all
+# 4. Faça upload do vídeo quando solicitado
 ```
+
+#### **Opção 2: Notebook Completo** (Com gráficos e análises)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mavsousa30/techchallengefase4/blob/main/notebooks/Colab_Video_Analysis.ipynb)
 
 📖 **Guia completo**: [notebooks/README_COLAB.md](notebooks/README_COLAB.md)
 
