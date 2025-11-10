@@ -3,7 +3,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![Tests](https://img.shields.io/badge/tests-117%20passed-green.svg)](tests/)
 [![Code style: ruff](https://img.shields.io/badge/code%20style-ruff-000000.svg)](https://github.com/astral-sh/ruff)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/SEU_USUARIO/TechChallengeFase4/blob/main/notebooks/Colab_Video_Analysis.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Mavsousa30/techchallengefase4/blob/main/notebooks/Colab_Video_Analysis.ipynb)
 
 > **⚡ DICA:** Use o [Google Colab](notebooks/README_COLAB.md) para processamento **10-20x mais rápido** com GPU gratuita!
 
@@ -76,7 +76,7 @@ pip install -r requirements.txt
 
 ```bash
 # 1. Acesse o notebook
-https://colab.research.google.com/github/SEU_USUARIO/TechChallengeFase4/blob/main/notebooks/Colab_Video_Analysis.ipynb
+https://colab.research.google.com/github/Mavsousa30/techchallengefase4/blob/main/notebooks/Colab_Video_Analysis.ipynb
 
 # 2. Ative a GPU: Runtime → Change runtime type → GPU (T4)
 # 3. Execute todas as células: Runtime → Run all
